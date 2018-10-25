@@ -1,5 +1,7 @@
 package utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -98,9 +100,9 @@ public class DoubleCalculationUtil {
      * date 2018-08-27
      **/
     public static double stringToDouble(String string, String pointNum) {
-//        if (StringUtils.isBlank(string)) {
-//            return 0;
-//        }
+        if (StringUtils.isBlank(string)) {
+            return 0;
+        }
         double b = Double.valueOf(string);
         DecimalFormat df = new DecimalFormat(pointNum);
         String str = df.format(b);
